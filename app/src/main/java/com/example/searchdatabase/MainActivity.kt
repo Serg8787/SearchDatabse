@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(),ViewHolder.ItemCallback,SearchView.OnQu
         val animalFromDb: List<Animal> = animalDatabase.animalDao().getAll()
         val animal = animalFromDb.get(index)
         animalDatabase.animalDao().deleteAnimal(animal)
+        adapter.notifyDataSetChanged()
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
