@@ -32,8 +32,5 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-        noteDatabase = AppDatabase.getDatabase(this)
-
     }
 }
