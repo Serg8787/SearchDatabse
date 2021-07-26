@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 data class Animal(
     var typeOfAnimal: String,
     var name: String?,
-    var weight: Double,
-    var height: Double,
+    var weight: String,
+    var height: String,
 
     ) {
     @PrimaryKey(autoGenerate = true)

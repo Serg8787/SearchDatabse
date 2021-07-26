@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SearchDatabase</string>
+    <string name="typeOfAnimal">Тип животного</string>
 </resources>

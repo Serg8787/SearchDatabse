@@ -9,16 +9,16 @@ interface AnimalDao {
     fun getAll(): List<Animal>
 
     @Insert
-    fun insertNote(animal:Animal)
+    fun insertAnimal(animal:Animal)
 
     @Delete
-    fun deleteNote(animal: Animal)
+    fun deleteAnimal(animal: Animal)
 
     @Update
-    fun updateNote(animal: Animal)
+    fun updateAnimal(animal: Animal)
 
 
     @Query("SELECT * FROM animal WHERE id = :id")
-    fun getNoteById(id: Int): Animal?
+    fun getAnimalById(id: Int): Animal?
 
 }
