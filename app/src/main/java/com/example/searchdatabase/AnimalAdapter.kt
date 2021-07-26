@@ -1,6 +1,5 @@
 package com.example.searchdatabase
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.animal_item.view.*
 
 class AnimalAdapter(
-    val context: Context,
+    val context: MainActivity,
     val animalList: List<Animal>,
-    val callback: ViewHolder.ItemCallback
-) :
+    mainActivity: MainActivity,
+
+    ) :
     RecyclerView.Adapter<ViewHolder>() {
 
 
@@ -30,7 +30,7 @@ class AnimalAdapter(
         holder.weight.text = animalList[pos].weight
         holder.height.text = animalList[pos].height
         holder.delete.setOnClickListener {
-            callback.deleteItem(pos)
+//            callback.deleteItem(pos)
         }
 
     }

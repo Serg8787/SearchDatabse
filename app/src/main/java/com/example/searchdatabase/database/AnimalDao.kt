@@ -21,4 +21,7 @@ interface AnimalDao {
     @Query("SELECT * FROM animal WHERE id = :id")
     fun getAnimalById(id: Int): Animal?
 
+    @Query("SELECT * FROM animal WHERE typeOfAnimal LIKE :searchQuery OR name LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String?):List<Animal>
+
 }
