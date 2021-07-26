@@ -6,15 +6,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.searchdatabase.database.AppDatabase
 import kotlinx.android.synthetic.main.animal_item.view.*
 
 class AnimalAdapter(
     val context: MainActivity,
     val animalList: List<Animal>,
-    mainActivity: MainActivity,
+     var calback: ViewHolder.ItemCallback
 
     ) :
     RecyclerView.Adapter<ViewHolder>() {
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,7 +32,9 @@ class AnimalAdapter(
         holder.weight.text = animalList[pos].weight
         holder.height.text = animalList[pos].height
         holder.delete.setOnClickListener {
-//            callback.deleteItem(pos)
+            calback.deleteItem(pos)
+
+
         }
 
     }

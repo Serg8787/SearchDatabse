@@ -7,6 +7,7 @@ import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.searchdatabase.database.AppDatabase
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.animal_item.*
 
 class MainActivity : AppCompatActivity(),ViewHolder.ItemCallback,SearchView.OnQueryTextListener {
     lateinit var animalDatabase: AppDatabase
@@ -21,42 +22,38 @@ class MainActivity : AppCompatActivity(),ViewHolder.ItemCallback,SearchView.OnQu
         animalList = ArrayList<Animal>()
         animalDatabase = AppDatabase.getDatabase(this)
         searchView?.setOnQueryTextListener(this)
+        searchView.isSubmitButtonEnabled = true
 
-//        adapter = AnimalAdapter(context = this, animalList, this)
-//        recycler.layoutManager = LinearLayoutManager(this)
-//        recycler.adapter = adapter
+
+//        search("Ника")
 
         floatingActionButton.setOnClickListener {
             val intent = Intent(this, AddNewAnimalActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 
     override fun deleteItem(index: Int) {
-        val animal = animalList.get(index)
+        val animalFromDb: List<Animal> = animalDatabase.animalDao().getAll()
+        val animal = animalFromDb.get(index)
         animalDatabase.animalDao().deleteAnimal(animal)
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        adapter = AnimalAdapter(context = this, animalList, this)
-        recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-        recycler.adapter = adapter
-        val animalFromDb: List<Animal> = animalDatabase.animalDao().searchDatabase(query)
-        animalList.clear()
-        animalList.addAll(animalFromDb)
+        search(query)
         return true
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
+        search(query)
+        return true
+    }
+    private fun search(query: String?){
         adapter = AnimalAdapter(context = this, animalList, this)
         recycler.layoutManager = LinearLayoutManager(this@MainActivity)
         recycler.adapter = adapter
         val animalFromDb: List<Animal> = animalDatabase.animalDao().searchDatabase(query)
         animalList.clear()
         animalList.addAll(animalFromDb)
-        return true
     }
-
 }
