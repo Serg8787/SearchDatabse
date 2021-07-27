@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(),ViewHolder.ItemCallback,SearchView.OnQu
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         search(query)
-        return true
+        return false
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
