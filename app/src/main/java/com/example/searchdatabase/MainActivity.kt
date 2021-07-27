@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity(),ViewHolder.ItemCallback,SearchView.OnQu
 
         animalList = ArrayList<Animal>()
         animalDatabase = AppDatabase.getDatabase(this)
+        // Элемент search из xml
         searchView?.setOnQueryTextListener(this)
+
+        // кнопка > для обновления списка
         searchView.isSubmitButtonEnabled = true
         
 
