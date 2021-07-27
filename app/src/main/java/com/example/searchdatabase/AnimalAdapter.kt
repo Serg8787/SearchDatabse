@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.searchdatabase.database.AppDatabase
@@ -47,7 +48,7 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var name: TextView
     var weight: TextView
     var height: TextView
-    var delete: Button
+    var delete: ImageButton
 
     init {
         typeOfAnimal = itemView.tvTypeOfAnimalItem

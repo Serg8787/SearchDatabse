@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(),ViewHolder.ItemCallback,SearchView.OnQu
         animalDatabase = AppDatabase.getDatabase(this)
         searchView?.setOnQueryTextListener(this)
         searchView.isSubmitButtonEnabled = true
+        
 
 
 //        search("Ника")

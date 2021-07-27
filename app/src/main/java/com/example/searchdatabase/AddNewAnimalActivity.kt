@@ -17,19 +17,16 @@ class AddNewAnimalActivity : AppCompatActivity() {
 
 
         btAddNote.setOnClickListener {
-            var isImpotent: Int
-            if (etTypeOfAnimalAdd.text.toString().isNotEmpty() && etNameAnimalAdd.text.toString()
-                    .isNotEmpty()
-                && etHeightOfAnimalAdd.text.toString()
-                    .isNotEmpty() && etWeighttOfAnimalAdd.text.toString().isNotEmpty()
-            ) {
+            if (etTypeOfAnimalAdd.text.toString().isNotEmpty()
+                && etNameAnimalAdd.text.toString().isNotEmpty()
+                && etHeightOfAnimalAdd.text.toString().isNotEmpty()
+                && etWeighttOfAnimalAdd.text.toString().isNotEmpty()) {
                 val typeOfAnimal: String = etTypeOfAnimalAdd.text.toString()
                 val name: String = etNameAnimalAdd.text.toString()
-                val height: String = etHeightOfAnimalAdd.text.toString()
-                val weight: String = etWeighttOfAnimalAdd.text.toString()
+                val height: String = etHeightOfAnimalAdd.text.toString() + " см"
+                val weight: String = etWeighttOfAnimalAdd.text.toString() + " кг"
                 val animal: Animal =
                     Animal(typeOfAnimal, name, weight, height)
-
                 animalDatabase.animalDao().insertAnimal(animal)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

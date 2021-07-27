@@ -16,53 +16,111 @@
             android:id="@+id/tvTypeOfAnimalItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:padding="5dp"
             android:text="TypeOfAnimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btDeleteItem"
+            app:layout_constraintStart_toEndOf="@+id/tvTypeAnimalLabel"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNameAnimalItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="NameAnimal"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:padding="5dp"
+            android:text="NameAnimal"
+            app:layout_constraintEnd_toStartOf="@+id/btDeleteItem"
             app:layout_constraintStart_toStartOf="@+id/tvTypeOfAnimalItem"
-            app:layout_constraintTop_toBottomOf="@+id/tvTypeOfAnimalItem"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTypeOfAnimalItem" />
 
         <TextView
             android:id="@+id/tvWeihgtItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Вес животного"
-            android:padding="5dp"
             android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="Вес животного"
+            app:layout_constraintEnd_toEndOf="@+id/tvNameAnimalItem"
             app:layout_constraintStart_toStartOf="@+id/tvNameAnimalItem"
-            app:layout_constraintTop_toBottomOf="@id/tvNameAnimalItem"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/tvNameAnimalItem" />
+
         <TextView
             android:id="@+id/tvHeightItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Рост животного"
+
             android:padding="5dp"
-            android:layout_marginTop="10dp"
+            android:text="Рост животного"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvWeihgtItem"
             app:layout_constraintStart_toStartOf="@+id/tvWeihgtItem"
-            app:layout_constraintTop_toBottomOf="@+id/tvWeihgtItem"
-            app:layout_constraintEnd_toEndOf="parent"/>
-        <Button
+            app:layout_constraintTop_toBottomOf="@+id/tvWeihgtItem" />
+
+        <ImageButton
             android:id="@+id/btDeleteItem"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginEnd="16dp"
+            android:src="@android:drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/tvTypeAnimalLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Удалить"
             android:layout_margin="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvHeightItem"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="Type of Animal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tvNameLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Nickname"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNameAnimalItem"
+            app:layout_constraintEnd_toEndOf="@+id/tvTypeAnimalLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvNameAnimalItem" />
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Weight"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWeihgtItem"
+            app:layout_constraintEnd_toEndOf="@+id/tvNameLabel"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvWeihgtItem" />
+
+        <TextView
+            android:id="@+id/tvHeightLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Height"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeightItem"
+            app:layout_constraintEnd_toStartOf="@+id/tvHeightItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvHeightItem"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
